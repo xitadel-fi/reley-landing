@@ -10,9 +10,9 @@ export function TopMenu() {
   const active = topKeyFor(path)
 
   return (
-    <div className="fixed top-[64px] left-0 right-0 z-40 border-b border-line bg-[var(--color-ink)]/85 backdrop-blur-md">
+    <div className="fixed top-[72px] left-0 right-0 z-40 border-b border-line bg-[rgba(9,23,33,0.70)] backdrop-blur-[20px]">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
-        <div className="flex items-center gap-1 h-[48px] overflow-x-auto">
+        <div className="flex items-center gap-1 h-[52px] overflow-x-auto">
           {TOP_MENU.map((m) => {
             const isActive = active === m.key
             return (
@@ -20,13 +20,13 @@ export function TopMenu() {
                 key={m.key}
                 href={m.href}
                 className={clsx(
-                  'relative px-4 py-3 font-mono text-[12.5px] tracking-tight shrink-0 transition-colors',
-                  isActive ? 'text-fore' : 'text-soft hover:text-fore',
+                  'relative inline-flex items-center h-full px-4 font-display font-bold text-[12px] uppercase tracking-[0.12em] shrink-0 transition-colors',
+                  isActive ? 'text-fore' : 'text-mute hover:text-fore',
                 )}
               >
                 {m.label}
                 {isActive && (
-                  <span className="absolute left-3 right-3 -bottom-px h-[2px] bg-accent" />
+                  <span className="absolute left-3 right-3 bottom-0 h-[2px] grad-accent-bar rounded-sm" />
                 )}
               </Link>
             )

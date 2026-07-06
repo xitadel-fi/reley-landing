@@ -33,7 +33,8 @@ export function Workflow() {
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
         <Reveal>
           <div className="max-w-[68ch]">
-            <h2 className="text-fore text-[28px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-[1.06] tracking-[-0.028em] font-medium [text-wrap:balance]">
+            <div className="label-tag text-accent mb-4">Workflow</div>
+            <h2 className="text-fore font-display font-black text-[28px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-[1.06] tracking-[-0.028em] [text-wrap:balance]">
               Scripted scenarios.
               <br />
               <span className="text-mute">Reusable, deterministic.</span>
@@ -47,7 +48,7 @@ export function Workflow() {
 
         <Reveal delay={0.12}>
           <div className="mt-16 relative">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-line-strong to-transparent" />
+            <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
             <div className="relative flex flex-col md:flex-row md:items-center md:overflow-x-auto md:pb-3 gap-3 md:gap-0">
               {OPS.map((op, i) => {
                 const Icon = op.icon
@@ -56,12 +57,12 @@ export function Workflow() {
                     key={op.label + i}
                     className="flex md:flex-row items-center md:shrink-0"
                   >
-                    <div className="group relative flex-1 md:flex-none rounded-[12px] border border-line bg-surface-1 px-4 py-3.5 min-w-[182px] hover:border-line-strong hover:bg-surface-2 transition-colors">
+                    <div className="group relative flex-1 md:flex-none rounded-[12px] border border-line sheen-1 px-4 py-3.5 min-w-[182px] hover:border-accent-deep hover:-translate-y-[2px] transition-all">
                       <div className="flex items-center gap-2.5">
-                        <span className="h-7 w-7 rounded-[7px] border border-line-strong flex items-center justify-center text-accent bg-ink">
+                        <span className="h-7 w-7 rounded-[7px] border border-accent/25 bg-accent/12 flex items-center justify-center text-accent">
                           <Icon size={14} weight="regular" />
                         </span>
-                        <span className="font-mono text-[13px] text-fore">
+                        <span className="font-display font-bold text-[13px] text-fore uppercase tracking-[0.08em]">
                           {op.label}
                         </span>
                       </div>
@@ -73,7 +74,7 @@ export function Workflow() {
                       <ArrowRight
                         size={14}
                         weight="bold"
-                        className="hidden md:block mx-1 text-mute shrink-0"
+                        className="hidden md:block mx-1 text-accent shrink-0"
                       />
                     )}
                   </div>
@@ -99,8 +100,8 @@ export function Workflow() {
                 v: 'Once cached, every sandbox runs without an RPC call.',
               },
             ].map((c) => (
-              <div key={c.k} className="border-t border-line pt-6">
-                <div className="font-mono text-[26px] text-fore tracking-tight tabular-nums">
+              <div key={c.k} className="border-l-2 border-accent/40 pl-5">
+                <div className="font-display font-black text-[26px] text-fore tracking-[-0.02em] tabular-nums">
                   {c.k}
                 </div>
                 <div className="mt-3 text-soft text-[14.5px] leading-[1.6] max-w-[28ch]">

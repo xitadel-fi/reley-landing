@@ -31,12 +31,10 @@ export function Nav() {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  // Close mobile menu on route change.
   useEffect(() => {
     setMenuOpen(false)
   }, [path])
 
-  // Lock body scroll while menu is open.
   useEffect(() => {
     if (typeof document === 'undefined') return
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -59,8 +57,8 @@ export function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="absolute inset-0 bg-[var(--color-ink)]/72 backdrop-blur-xl border-b border-line" />
-      <div className="relative mx-auto max-w-[1320px] h-[64px] px-4 sm:px-6 flex items-center justify-between gap-3">
+      <div className="absolute inset-0 bg-[rgba(9,23,33,0.70)] backdrop-blur-[20px] border-b border-line" />
+      <div className="relative mx-auto max-w-[1320px] h-[72px] px-4 sm:px-6 flex items-center justify-between gap-3">
         <Link
           href="/"
           aria-label="Reley home"
@@ -68,7 +66,7 @@ export function Nav() {
         >
           <Brand />
         </Link>
-        <nav className="hidden md:flex items-center gap-5 lg:gap-7 font-mono text-[12.5px]">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7 font-display font-bold text-[12px] uppercase tracking-[0.14em]">
           {PRIMARY.map((it) => {
             const active = isActive(it.href)
             return (
@@ -77,12 +75,12 @@ export function Nav() {
                 href={it.href}
                 className={clsx(
                   'relative transition-colors',
-                  active ? 'text-fore' : 'text-soft hover:text-fore',
+                  active ? 'text-fore' : 'text-mute hover:text-fore',
                 )}
               >
                 {it.label}
                 {active && (
-                  <span className="absolute -bottom-[22px] left-0 right-0 h-[2px] bg-accent rounded-sm" />
+                  <span className="absolute -bottom-[26px] left-0 right-0 h-[2px] grad-accent-bar rounded-sm" />
                 )}
               </Link>
             )
@@ -92,7 +90,7 @@ export function Nav() {
           <Link
             href="/waitlist"
             onClick={() => capture('cta_click', { id: 'nav_signup' })}
-            className="inline-flex items-center gap-2 h-[34px] px-4 rounded-[8px] bg-accent text-white font-medium font-mono text-[12.5px] hover:bg-[#7295ff] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-[1px]"
+            className="inline-flex items-center gap-2 h-[36px] px-5 rounded-[8px] grad-cta cta-shadow text-[#031018] font-display font-bold text-[12px] uppercase tracking-[0.14em] hover:-translate-y-[1px] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-[1px]"
             aria-label="Sign up for the cloud waitlist"
           >
             Signup
@@ -100,7 +98,7 @@ export function Nav() {
           <a
             href="https://github.com/hoangtuanictvn/reley"
             aria-label="GitHub repository"
-            className="hidden sm:inline-flex items-center justify-center h-[34px] w-[34px] rounded-[8px] text-soft hover:text-fore hover:bg-surface-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+            className="hidden sm:inline-flex items-center justify-center h-[36px] w-[36px] rounded-[8px] text-soft hover:text-fore hover:bg-surface-1 border border-line transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
           >
             <GithubLogo size={17} weight="regular" />
           </a>
@@ -109,19 +107,18 @@ export function Nav() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center h-[34px] w-[34px] rounded-[8px] text-soft hover:text-fore hover:bg-surface-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+            className="md:hidden inline-flex items-center justify-center h-[36px] w-[36px] rounded-[8px] text-soft hover:text-fore hover:bg-surface-1 border border-line transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
           >
             {menuOpen ? <X size={18} weight="regular" /> : <List size={18} weight="regular" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu sheet */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 top-[64px] z-40">
+        <div className="md:hidden fixed inset-0 top-[72px] z-40">
           <div
             aria-hidden
-            className="absolute inset-0 bg-[var(--color-ink)]/85 backdrop-blur-xl"
+            className="absolute inset-0 bg-[rgba(9,23,33,0.90)] backdrop-blur-[20px]"
             onClick={() => setMenuOpen(false)}
           />
           <div className="relative mx-auto max-w-[1320px] px-4 py-6">
@@ -133,12 +130,14 @@ export function Nav() {
                     key={it.href}
                     href={it.href}
                     className={clsx(
-                      'flex items-center justify-between rounded-[10px] px-4 py-3 text-[15px] transition-colors border border-line',
-                      active ? 'text-fore bg-surface-1' : 'text-soft hover:text-fore hover:bg-surface-1',
+                      'flex items-center justify-between rounded-[10px] px-4 py-3 text-[14px] font-display font-bold uppercase tracking-[0.12em] transition-colors border',
+                      active
+                        ? 'text-fore bg-surface-2 border-line-strong'
+                        : 'text-soft hover:text-fore hover:bg-surface-1 border-line',
                     )}
                   >
                     <span>{it.label}</span>
-                    {active && <span className="h-1.5 w-1.5 rounded-full bg-accent" />}
+                    {active && <span className="h-1.5 w-1.5 rounded-full bg-accent blink" />}
                   </Link>
                 )
               })}
@@ -147,15 +146,15 @@ export function Nav() {
               <Link
                 href="/waitlist"
                 onClick={() => capture('cta_click', { id: 'mobile_signup' })}
-                className="inline-flex items-center justify-center gap-2 h-[44px] px-5 rounded-[10px] bg-accent text-white font-medium text-[14.5px] hover:bg-[#7295ff] transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-[46px] px-5 rounded-[10px] grad-cta cta-shadow text-[#031018] font-display font-bold text-[13px] uppercase tracking-[0.14em]"
               >
                 Signup
               </Link>
               <a
                 href="https://github.com/hoangtuanictvn/reley"
-                className="inline-flex items-center justify-center gap-2 h-[44px] px-5 rounded-[10px] border border-line text-fore font-mono text-[13px] hover:bg-surface-1 transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-[46px] px-5 rounded-[10px] border border-line text-fore font-display font-bold text-[12px] uppercase tracking-[0.14em] hover:bg-surface-1 transition-colors"
               >
-                <GithubLogo size={15} weight="regular" />
+                <GithubLogo size={16} weight="regular" />
                 GitHub
               </a>
             </div>

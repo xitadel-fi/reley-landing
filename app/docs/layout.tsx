@@ -13,7 +13,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       </a>
       <Nav />
       <TopMenu />
-      <div className="pt-[112px]">
+      <div className="pt-[124px]">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <div className="flex gap-0 lg:gap-12">
             <Sidebar />

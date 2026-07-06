@@ -1,11 +1,7 @@
 import { Suspense } from 'react'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import { PosthogProvider } from './components/posthog-provider'
 import './globals.css'
-
-const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans', display: 'swap' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' })
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://reley.xyz'
 const TITLE = 'Reley - Local SVM sandbox for Solana programs'
@@ -15,7 +11,7 @@ const DESCRIPTION =
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#08090c',
+  themeColor: '#091721',
   colorScheme: 'dark',
 }
 
@@ -89,9 +85,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en">
       <body>
-        <div className="grain" />
         <Suspense fallback={null}>
           <PosthogProvider />
         </Suspense>

@@ -4,17 +4,17 @@ type Tok = { t: string; c?: 'cmd' | 'flag' | 'arg' | 'str' | 'kw' | 'fn' | 'num'
 
 function color(c?: Tok['c']) {
   switch (c) {
-    case 'cmd': return 'text-[#aeb9f0]'
-    case 'flag': return 'text-[#9aa3b2]'
-    case 'arg': return 'text-[#e8eaf0]'
-    case 'str': return 'text-[#cdd6e8]'
-    case 'kw': return 'text-[#aeb9f0]'
-    case 'fn': return 'text-[#cdd6e8]'
-    case 'num': return 'text-[#9aa3b2]'
-    case 'cm': return 'text-[#6c7385] italic'
-    case 'p': return 'text-[#5d83ff]'
-    case 'op': return 'text-[#6c7385]'
-    default: return 'text-[#9aa3b2]'
+    case 'cmd': return 'text-[#72E1EE]'
+    case 'flag': return 'text-[rgba(212,249,255,0.55)]'
+    case 'arg': return 'text-[#D4F9FF]'
+    case 'str': return 'text-[#24D1B1]'
+    case 'kw': return 'text-[#26CDD3]'
+    case 'fn': return 'text-[#72E1EE]'
+    case 'num': return 'text-[#D0B053]'
+    case 'cm': return 'text-[rgba(212,249,255,0.35)] italic'
+    case 'p': return 'text-[#20C8EE]'
+    case 'op': return 'text-[rgba(212,249,255,0.45)]'
+    default: return 'text-[rgba(212,249,255,0.6)]'
   }
 }
 
@@ -39,12 +39,12 @@ export function TerminalFrame({
   className?: string
 }) {
   return (
-    <div className={`code-shadow rounded-[var(--radius-lg)] overflow-hidden bg-[#0b0c10] ${className}`}>
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-line bg-[#0d0f15]">
+    <div className={`code-shadow rounded-[var(--radius-lg)] overflow-hidden sheen-1 border border-line ${className}`}>
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-line bg-[rgba(9,23,33,0.55)] backdrop-blur-md">
         <div className="flex gap-1.5">
-          <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
-          <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
-          <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
+          <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
+          <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
+          <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
         </div>
         <span className="ml-3 font-mono text-[11px] text-mute">{title}</span>
       </div>

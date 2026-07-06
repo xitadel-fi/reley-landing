@@ -5,16 +5,14 @@ export function UseCase() {
   return (
     <section
       id="patch-deep"
-      className="relative py-20 md:py-40 border-t border-line bg-surface"
+      className="relative py-20 md:py-40 border-t border-line sheen-1"
     >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
         <div className="grid lg:grid-cols-[1fr_1.05fr] gap-12 lg:gap-20 items-start">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-deep">
-                Use case
-              </div>
-              <h2 className="mt-4 text-fore text-[28px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-[1.06] tracking-[-0.028em] font-medium [text-wrap:balance]">
+              <div className="label-tag text-accent">Use case</div>
+              <h2 className="mt-4 text-fore font-display font-black text-[28px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-[1.06] tracking-[-0.028em] [text-wrap:balance]">
                 Test the admin path
                 <br />
                 you never had keys for.

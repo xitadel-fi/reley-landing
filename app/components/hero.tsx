@@ -10,9 +10,14 @@ export function Hero() {
       className="relative pt-24 pb-20 md:pt-36 md:pb-40 overflow-hidden"
     >
       <div className="hero-orb" />
-      <div className="hero-grid" />
-      <div className="hero-scan" style={{ top: '12%' }} />
-      <div className="hero-scan" style={{ top: '42%', animationDelay: '3.5s' }} />
+      <div
+        className="hero-halo"
+        style={{ top: '18%', right: '-6%', width: '520px', height: '520px' }}
+      />
+      <div
+        className="hero-halo"
+        style={{ top: '52%', left: '-8%', width: '420px', height: '420px', animationDelay: '2.5s' }}
+      />
       <div className="accent-glow absolute inset-x-0 top-0 h-[560px] pointer-events-none" />
       <HeroParticles />
 
@@ -20,7 +25,13 @@ export function Hero() {
         <div className="grid lg:grid-cols-[1.05fr_1.12fr] gap-10 lg:gap-16 items-center">
           <div className="lg:pt-2">
             <Reveal>
-              <h1 className="text-fore text-[34px] sm:text-[42px] md:text-[58px] lg:text-[68px] leading-[1.04] tracking-[-0.028em] font-medium [text-wrap:balance]">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 sheen-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-green blink" />
+                <span className="label-tag text-soft">LiteSVM · Local Sandbox</span>
+              </div>
+            </Reveal>
+            <Reveal>
+              <h1 className="text-fore font-display font-black text-[34px] sm:text-[42px] md:text-[58px] lg:text-[68px] leading-[1.04] tracking-[-0.028em] [text-wrap:balance]">
                 Lightweight Solana mainnet
                 <br />
                 <span className="text-mute">on your laptop.</span>
@@ -37,7 +48,7 @@ export function Hero() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href={DOWNLOAD_URL}
-                  className="group inline-flex items-center gap-2 h-[46px] px-5 rounded-[10px] bg-fore text-ink font-medium text-[14.5px] hover:bg-[#f4f6fb] transition-all active:translate-y-[1px] focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_22px_40px_-22px_rgba(0,0,0,0.6)]"
+                  className="group inline-flex items-center gap-2 h-[48px] px-6 rounded-[10px] grad-cta cta-shadow text-[#031018] font-display font-bold text-[13.5px] uppercase tracking-[0.12em] hover:-translate-y-[1px] transition-all active:translate-y-[1px] focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
                 >
                   Download for macOS
                   <ArrowRight
@@ -48,7 +59,7 @@ export function Hero() {
                 </a>
                 <a
                   href="/docs"
-                  className="group inline-flex items-center gap-2 h-[46px] px-4 rounded-[10px] text-fore font-mono text-[13.5px] hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent/60"
+                  className="group inline-flex items-center gap-2 h-[48px] px-4 rounded-[10px] text-fore font-display font-bold text-[12px] uppercase tracking-[0.14em] hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent/60"
                 >
                   <BookOpen size={16} weight="regular" />
                   Read the docs
@@ -72,25 +83,25 @@ export function Hero() {
           <Reveal delay={0.22}>
             <div className="relative">
               {/* halo */}
-              <div className="absolute -inset-12 rounded-[28px] bg-[radial-gradient(60%_60%_at_70%_0%,rgba(93,131,255,0.22),transparent_70%),radial-gradient(50%_60%_at_15%_60%,rgba(93,131,255,0.10),transparent_70%)] blur-2xl pointer-events-none" />
+              <div className="absolute -inset-12 rounded-[28px] bg-[radial-gradient(60%_60%_at_70%_0%,rgba(32,200,238,0.28),transparent_70%),radial-gradient(50%_60%_at_15%_60%,rgba(38,205,211,0.14),transparent_70%)] blur-2xl pointer-events-none" />
 
               {/* window */}
               <div className="relative float-y">
                 <div className="shine-edge rounded-[16px]">
-                  <div className="relative rounded-[16px] border border-line bg-[#0b0c10] overflow-hidden code-shadow">
-                    <div className="flex items-center gap-2 px-4 h-[36px] border-b border-line bg-[#0d0f15]">
+                  <div className="relative rounded-[16px] border border-line-strong sheen-1 overflow-hidden code-shadow">
+                    <div className="flex items-center gap-2 px-4 h-[38px] border-b border-line bg-[rgba(9,23,33,0.55)] backdrop-blur-md">
                       <div className="flex gap-1.5">
-                        <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
-                        <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
-                        <span className="h-[10px] w-[10px] rounded-full bg-[#2a3142]" />
+                        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
+                        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
+                        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(212,249,255,0.14)]" />
                       </div>
                       <span className="ml-3 font-mono text-[11px] text-mute">
                         reley · pamm · env/current-local-clean
                       </span>
-                      <span className="ml-auto inline-flex items-center gap-1.5 font-mono text-[10.5px] text-mute uppercase tracking-[0.18em]">
+                      <span className="ml-auto inline-flex items-center gap-1.5 font-display font-bold text-[10.5px] text-fore uppercase tracking-[0.18em]">
                         <span className="relative flex h-1.5 w-1.5">
-                          <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 animate-ping" />
-                          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-green opacity-60 animate-ping" />
+                          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green" />
                         </span>
                         live
                       </span>
@@ -107,18 +118,16 @@ export function Hero() {
                 {/* floating annotation chips */}
                 <div className="hidden md:block">
                   <div
-                    className="absolute -left-6 top-[24%] z-10 rounded-[12px] border border-line bg-surface-1/85 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.6)]"
+                    className="absolute -left-6 top-[24%] z-10 rounded-[12px] border border-line-strong sheen-1 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(2,23,33,0.7)]"
                     style={{ animation: 'float-y 9s ease-in-out infinite' }}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="h-7 w-7 rounded-[8px] bg-accent/15 text-accent inline-flex items-center justify-center">
+                      <span className="h-8 w-8 rounded-[8px] bg-accent/15 text-accent inline-flex items-center justify-center border border-accent/25">
                         <CheckCircle size={15} weight="fill" />
                       </span>
                       <div>
-                        <div className="font-mono text-[10.5px] text-mute uppercase tracking-[0.2em]">
-                          cloned
-                        </div>
-                        <div className="font-mono text-[12.5px] text-fore">
+                        <div className="label-tag text-mute">Cloned</div>
+                        <div className="font-mono text-[12.5px] text-fore mt-0.5">
                           MET_DLMM + 47 accts
                         </div>
                       </div>
@@ -126,18 +135,16 @@ export function Hero() {
                   </div>
 
                   <div
-                    className="absolute -right-6 top-[6%] z-10 rounded-[12px] border border-line bg-surface-1/85 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.6)]"
+                    className="absolute -right-6 top-[6%] z-10 rounded-[12px] border border-line-strong sheen-1 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(2,23,33,0.7)]"
                     style={{ animation: 'float-y 8s ease-in-out infinite', animationDelay: '1.5s' }}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="h-7 w-7 rounded-[8px] bg-surface-2 text-soft inline-flex items-center justify-center border border-line">
+                      <span className="h-8 w-8 rounded-[8px] bg-surface-2 text-soft inline-flex items-center justify-center border border-line">
                         <FileCode size={15} weight="regular" />
                       </span>
                       <div>
-                        <div className="font-mono text-[10.5px] text-mute uppercase tracking-[0.2em]">
-                          IDL
-                        </div>
-                        <div className="font-mono text-[12.5px] text-fore">
+                        <div className="label-tag text-mute">IDL</div>
+                        <div className="font-mono text-[12.5px] text-fore mt-0.5">
                           anchor v0.30.1
                         </div>
                       </div>
@@ -145,18 +152,16 @@ export function Hero() {
                   </div>
 
                   <div
-                    className="absolute -right-4 bottom-[12%] z-10 rounded-[12px] border border-line bg-surface-1/85 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.6)]"
+                    className="absolute -right-4 bottom-[12%] z-10 rounded-[12px] border border-line-strong sheen-1 backdrop-blur-md px-3.5 py-2.5 shadow-[0_18px_40px_-16px_rgba(2,23,33,0.7)]"
                     style={{ animation: 'float-y 10s ease-in-out infinite', animationDelay: '2.8s' }}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="h-7 w-7 rounded-[8px] bg-accent/12 text-accent inline-flex items-center justify-center">
+                      <span className="h-8 w-8 rounded-[8px] bg-accent/12 text-accent inline-flex items-center justify-center border border-accent/25">
                         <Lightning size={15} weight="fill" />
                       </span>
                       <div>
-                        <div className="font-mono text-[10.5px] text-mute uppercase tracking-[0.2em]">
-                          patch
-                        </div>
-                        <div className="font-mono text-[12.5px] text-fore">
+                        <div className="label-tag text-mute">Patch</div>
+                        <div className="font-mono text-[12.5px] text-fore mt-0.5">
                           pool.admin → wallet
                         </div>
                       </div>
@@ -174,11 +179,11 @@ export function Hero() {
 
 function Stat({ k, v }: { k: string; v: string }) {
   return (
-    <div className="border-l border-line pl-3.5">
-      <div className="font-mono text-[22px] text-fore tracking-[-0.01em] tabular-nums">
+    <div className="border-l-2 border-accent/40 pl-3.5">
+      <div className="font-display font-black text-[24px] text-fore tracking-[-0.02em] tabular-nums">
         {k}
       </div>
-      <div className="mt-1 font-mono text-[10.5px] text-mute uppercase tracking-[0.2em] leading-snug">
+      <div className="mt-1 label-tag text-mute leading-snug">
         {v}
       </div>
     </div>

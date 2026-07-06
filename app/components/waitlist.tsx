@@ -91,7 +91,7 @@ export function Waitlist({
           compact ? '' : 'mt-2',
         )}
       >
-        <CheckCircle size={20} weight="fill" className="text-accent shrink-0 mt-0.5" />
+        <CheckCircle size={20} weight="fill" className="text-green shrink-0 mt-0.5" />
         <div>
           <div className="text-fore text-[14.5px] font-medium">You&apos;re on the list.</div>
           <div className="mt-1 text-soft text-[13px] leading-[1.6]">
@@ -138,7 +138,7 @@ export function Waitlist({
         <button
           type="submit"
           disabled={status.kind === 'submitting'}
-          className="inline-flex items-center gap-2 px-4 sm:px-5 my-1 mr-1 rounded-[9px] bg-accent text-white font-medium text-[13.5px] hover:bg-[#7295ff] transition-colors active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 disabled:opacity-70"
+          className="inline-flex items-center gap-2 px-4 sm:px-5 my-1 mr-1 rounded-[9px] grad-cta cta-shadow text-[#031018] font-display font-bold text-[12px] uppercase tracking-[0.14em] hover:-translate-y-[1px] transition-all active:translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 disabled:opacity-70"
         >
           {status.kind === 'submitting' ? 'Joining…' : 'Join waitlist'}
           {status.kind !== 'submitting' && (

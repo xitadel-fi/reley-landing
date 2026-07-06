@@ -22,7 +22,7 @@ export function HeroParticles() {
       {DOTS.map((p, i) => (
         <motion.span
           key={i}
-          className="absolute h-[3px] w-[3px] rounded-full bg-accent/55 shadow-[0_0_10px_2px_rgba(20,241,149,0.45)]"
+          className="absolute h-[3px] w-[3px] rounded-full bg-accent/70 shadow-[0_0_12px_3px_rgba(32,200,238,0.5)]"
           style={{ left: `${p.x}%`, top: `${p.y}%` }}
           initial={reduce ? false : { opacity: 0.2, y: 0 }}
           animate={reduce ? undefined : { opacity: [0.2, 0.7, 0.2], y: [0, -14, 0] }}
