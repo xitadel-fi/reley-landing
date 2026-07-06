@@ -1,4 +1,3 @@
-import { GithubLogo } from '@phosphor-icons/react/dist/ssr'
 import { Brand } from './brand'
 import { DOWNLOAD_URL } from '../lib/links'
 
@@ -54,13 +53,6 @@ export function Footer() {
                   Xitadel
                 </span>
                 <span className="text-accent">↗</span>
-              </a>
-              <a
-                href="https://github.com/hoangtuanictvn/reley"
-                className="inline-flex items-center gap-2 font-mono text-[12.5px] text-soft hover:text-fore transition-colors"
-              >
-                <GithubLogo size={15} weight="regular" />
-                hoangtuanictvn/reley
               </a>
             </div>
           </div>
