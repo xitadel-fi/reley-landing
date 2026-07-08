@@ -81,7 +81,7 @@ export default function DownloadPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Free for noncommercial use
               </span>
-              <span>v0.1 preview</span>
+              <span>v1.0.0-beta.2</span>
               <span>No telemetry</span>
             </div>
           </Reveal>

@@ -28,8 +28,8 @@ export default function Install() {
       <H2 id="desktop">Desktop app</H2>
       <P>Download the latest installer from the releases page. macOS is the only supported platform today. Windows and Linux builds land next.</P>
       <Pre label="release/">
-{`Reley-1.x.x-arm64.dmg    macOS  (Apple Silicon)
-Reley-1.x.x-x64.dmg      macOS  (Intel)`}
+{`Reley-1.0.0-beta.2-arm64.dmg    macOS  (Apple Silicon)
+Reley-1.0.0-beta.2.dmg          macOS  (Intel)`}
       </Pre>
       <Callout>
         Windows and Linux builds are coming. The engine is platform-agnostic;
