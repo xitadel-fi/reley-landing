@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import type { Metadata, Viewport } from 'next'
+import { ChatwootWidget } from './components/chatwoot-widget'
 import { PosthogProvider } from './components/posthog-provider'
 import './globals.css'
 
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Suspense fallback={null}>
           <PosthogProvider />
+          <ChatwootWidget />
         </Suspense>
         {children}
       </body>
